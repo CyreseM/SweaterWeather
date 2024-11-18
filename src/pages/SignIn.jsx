@@ -7,36 +7,33 @@ const SignIn = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission
-    
-    // Fetch data from the API
-    try {
-      const response = await fetch('http://localhost:3500/users'); // Fetch user data
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`); // Handle fetch errors
-      }
-      
-      const { users } = await response.json(); // Extract the "users" array from the response
+    try{
+      const response = await fetch(`http://localhost:3500/users`)
+      const users  = await response.json(); // Extract the "users" array from the response
+      console.log(users)
       const formData = new FormData(e.target); // Extract form data
       const email = formData.get('email'); // Get the submitted username
       const password = formData.get('password'); // Get the submitted password
-
-      // Find a matching user
+      
       const matchingUser = users.find(
         (user) => user.email === email && user.password === password
       );
-     
-        console.log(matchingUser)
       if (matchingUser) {
-        console.log('Login successful!', matchingUser);
-        navigate('home')
-      } else {
-        console.error('Invalid username or password');
-        // Additional logic for failed login
-      }
-    } catch (error) {
-      console.error('Error fetching users:', error); // Log fetch errors
-    }
-  };
+           console.log('Login successful!', matchingUser);
+            navigate('home')
+            } else {
+            
+            console.error('Invalid username or password', matchingUser);
+           
+        } 
+  
+    }catch (error) {
+         console.error('Error fetching users:', error);
+    
+  }
+
+}
+
   
   return (
     <form onSubmit={handleSubmit} >

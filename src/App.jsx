@@ -1,14 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCloud } from '@fortawesome/free-solid-svg-icons'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-   
+      <header>
+        <p><FontAwesomeIcon icon={faCloud}/> MayWeather</p>
+      </header>
+      <div className="hero">
+        <div>
+          <h2>MayWeather</h2>
+          <p>Up to date weather forecasts and history brought to you in an elegant comprehensible way.</p>
+        </div>   
+      </div>
+      <div className='weatherdisplay'>
+
+      </div>
     </>
   )
 }
