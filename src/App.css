@@ -34,6 +34,7 @@ input{
   header > p {
     color: white;
     margin-left: 20px;
+    cursor: pointer;
   }
   
   .video-container {
@@ -59,8 +60,6 @@ input{
     max-width: 30rem;
     max-height: 30rem;
     top: 10rem;
-     /* left: 50%;
-    transform: translate(-50%, 0);  */
     border-radius: 5px;
     background-color: white;
     padding: 1.5rem 1rem ;
@@ -123,4 +122,52 @@ input{
   .hero p{
     color: white;
     max-width: 20rem;
+  }
+
+  .weatherdisplay{
+    width: 100%;
+    padding: 20px;
+  }
+  .weatherdisplay > div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    align-items: center;
+    row-gap: 10px;
+  }
+  .searchbox{
+    display: flex;
+    flex-direction: row;
+    height: 2em;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;;
+  }
+  .searchbox input, button{
+    border: none;
+    outline: none;
+    padding: 0 0.5rem;
+  }
+  .searchbox button{
+    padding: 5px 20px;
+    color: white;
+    background-color: rgba(15, 94, 253, 0.662);
+  }
+  .metric{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 18rem;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .metric p{
+     padding: 3px 3px;
+    border-radius: 5px;
+    background-color: rgb(108, 121, 132);
+    cursor: pointer;
+  }
+  .weatherinfo{
+    margin-top: var(--mg-botom);
   }
