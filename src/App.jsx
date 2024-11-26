@@ -13,7 +13,7 @@ function App() {
     weatherData: {},
   };
   const [state, dispatch] = useReducer(Reducer, initialState);
-  const API_KEY = "2b03189ba6f413149db50570d19ea8ae";
+  const API_KEY = process.env.REACT_APP_API_KEY;
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${state.displayName}&appid=${API_KEY}&units=${state.units}`;
   const handleRotate = () => {
     dispatch({ type: "rotate" });
